@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #0c0c12;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  letter-spacing: 0.05em;
+  color: #e0e0e0;
+}
+
+.links {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ── shared card base ── */
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 90px;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  transition: transform 0.18s, box-shadow 0.18s, background 0.18s;
+}
+
+.card:active {
+  transform: translateY(1px) !important;
+}
+
+/* ── KBP card — orange/red fire theme ── */
+.card-kbp {
+  font-family: 'Orbitron', sans-serif;
+  background: #080810;
+  border: 1px solid rgba(255, 94, 26, 0.35);
+  color: #ff5e1a;
+  text-shadow: 0 0 10px rgba(255, 94, 26, 0.7);
+  box-shadow:
+    0 0 18px rgba(255, 94, 26, 0.2),
+    inset 0 0 30px rgba(255, 94, 26, 0.04);
+  border-radius: 6px;
+}
+
+.card-kbp:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 94, 26, 0.08);
+  border-color: rgba(255, 94, 26, 0.7);
+  box-shadow:
+    0 0 32px rgba(255, 94, 26, 0.45),
+    0 0 8px rgba(230, 48, 0, 0.3),
+    inset 0 0 40px rgba(255, 94, 26, 0.08);
+}
+
+/* ── MetaSpace card — purple/green neon, rounded ── */
+.card-metaspace {
+  font-family: 'Share Tech Mono', monospace;
+  background: #0b0b0f;
+  border: 1px solid rgba(120, 120, 255, 0.25);
+  color: #00ff7f;
+  text-shadow: 0 0 10px rgba(0, 255, 127, 0.6);
+  box-shadow:
+    0 0 18px rgba(0, 255, 127, 0.12),
+    inset 0 0 30px rgba(120, 120, 255, 0.04);
+  border-radius: 50px;
+}
+
+.card-metaspace:hover {
+  transform: translateY(-4px);
+  background: rgba(120, 120, 255, 0.08);
+  border-color: rgba(120, 120, 255, 0.6);
+  box-shadow:
+    0 0 28px rgba(120, 120, 255, 0.4),
+    0 0 12px rgba(0, 255, 127, 0.25),
+    inset 0 0 40px rgba(120, 120, 255, 0.06);
+}
+
+/* ── AI Games card — deep space, angular diamond-cut corners ── */
+.card-aigames {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  background: rgba(12, 18, 32, 0.9);
+  border: none;
+  color: #00f0ff;
+  text-shadow: 0 0 12px rgba(0, 240, 255, 0.8);
+  /* angular cuts on all four corners */
+  clip-path: polygon(16px 0%, calc(100% - 16px) 0%, 100% 16px, 100% calc(100% - 16px), calc(100% - 16px) 100%, 16px 100%, 0% calc(100% - 16px), 0% 16px);
+  border-radius: 0;
+  box-shadow:
+    0 0 0 1px rgba(0, 240, 255, 0.3),
+    0 0 20px rgba(0, 240, 255, 0.15),
+    inset 0 0 30px rgba(139, 92, 246, 0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+/* scan-line shimmer */
+.card-aigames::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(0, 240, 255, 0.02) 3px,
+    rgba(0, 240, 255, 0.02) 4px
+  );
+  pointer-events: none;
+}
+
+.aigames-label {
+  position: relative;
+  z-index: 1;
+}
+
+.card-aigames:hover {
+  transform: translateY(-4px);
+  color: #e879f9;
+  text-shadow: 0 0 14px rgba(232, 121, 249, 0.9);
+  box-shadow:
+    0 0 0 1px rgba(139, 92, 246, 0.6),
+    0 0 30px rgba(139, 92, 246, 0.35),
+    0 0 12px rgba(0, 240, 255, 0.2),
+    inset 0 0 40px rgba(139, 92, 246, 0.08);
+}
+
+/* ── GitHub link ── */
+.github-link {
+  margin-top: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.45);
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+  transition: color 0.2s;
+}
+
+.github-link:hover {
+  color: rgba(255, 255, 255, 0.85);
+}
